@@ -41,9 +41,9 @@ def render(game,current,moves,points):
     print("\nYou are at the " + c["name"])
     print(c["desc"])
 
-for i in c["items"]:
-    if not check_inventory(i["item"]):
-        print(i["desc"])
+    for i in c["items"]:
+        if not check_inventory(i["item"]):
+            print(i["desc"])
 
 def get_input():
     response = input("\nWhat do you want to do? ")
