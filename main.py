@@ -16,7 +16,8 @@ def load_files():
     try:
         __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
         with open(os.path.join(__location__, game_file)) as json_file: game = json.load(json_file)
-        return game
+        with open(os.path.join(__location__, item_file)) as json_file: items = json.load(json_file)
+        return (game,items)
     except:
         print("There was a problem reading either the game or item file.")
         os._exit(1)
@@ -32,33 +33,32 @@ def calculate_points(items):
     for i in inventory:
         if i in items:
             points += items[i]["points"]
-            return points
+    return points
 
 
-def render(game,current,moves,points):
+def render(game,items,current,moves,points):
     c = game[current]
     print("\n\n{} moves\t\t\t\t{} points".format(moves, points))
     print("\nYou are at the " + c["name"])
     print(c["desc"])
-
-for i in c["items"]:
-    if not check_inventory(i["item"]):
-        print(i["desc"])
+    for i in c["items"]:
+        if not check_inventory(i["item"]):
+            print(i["desc"])
 
 def get_input():
     response = input("\nWhat do you want to do? ")
     response = response.upper().strip()
     return response
 
-def update(game,current,response):
+def update(game,items,current,response):
     if response == "INVENTORY":
         print("You are carrying:")
-    if len(inventory) == 0:
-        print("nothing")
-    else:
-        for i in inventory:
-            print(i.lower())
-        return current
+        if len(inventory) == 0:
+            print("nothing")
+        else:
+            for i in inventory:
+                print(i.lower())
+            return current
 
     c = game[current]
     for e in c["exits"]:
@@ -82,27 +82,27 @@ def main():
     moves = 0
     points = 0
 
-(game,items) = load_files()
+    (game,items) = load_files()
 
-while True:
-    render(game,items,current,moves,points)
+    while True:
+        render(game,items,current,moves,points)
 
-    for e in end_game:
-        if current == e:
-            print("You win!")
+        for e in end_game:
+            if current == e:
+                print("You win!")
+                break #break out of the while loop
+
+        response = get_input()
+
+        if response == "QUIT" or response == "Q":
             break #break out of the while loop
 
-    response = get_input()
+        current = update(game,items,current,response)
+        moves += 1
+        points = calculate_points(items)
 
-    if response == "QUIT" or response == "Q":
-        break #break out of the while loop
-
-current = update(game,items,current,response)
-moves += 1
-points = calculate_points(items)
-
-print("Thanks for playing!")
-print("You scored {} points in {} moves".format(points,moves))
+    print("Thanks for playing!")
+    print("You scored {} points in {} moves".format(points,moves))
 
 # run the main function
 if __name__ == '__main__':
