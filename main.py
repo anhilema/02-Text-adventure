@@ -4,7 +4,7 @@ import sys, os, json
 assert sys.version_info >= (3,7), "This script requires at least Python 3.7"
 
 # The game and item description files (in the same folder as this script)
-game_file = 'zork.json'
+game_file = 'game.json'
 item_file = 'items.json'
 inventory = []
 moves = 0
@@ -77,7 +77,7 @@ def update(game,items,current,response):
 
 # The main function for the game
 def main():
-    current = 'WHOUS' # The starting location
+    current = 'START' # The starting location
     end_game = ['END'] # Any of the end-game locations
     moves = 0
     points = 0

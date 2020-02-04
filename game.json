@@ -1,0 +1,163 @@
+{
+	"START": {
+		"name": "Tutorial",
+		"desc": "In this game, you may use left or right to navigate the rooms. Try and solve the puzzle to get to the last room! Type left to start!",
+		"exits": [{
+				"exit": "LEFT",
+				"target": "YELLOW"
+		}],
+		"items": []
+	},
+
+	"YELLOW": {
+		"name": "Yellow Room",
+		"desc": "The room is bright yellow with the I6 engraved on the wall.",
+		"exits": [
+			{
+				"exit": "LEFT",
+				"target": "PURPLE"
+			},
+			{
+				"exit": "RIGHT",
+				"target": "BLUE"
+			},
+			{
+				"exit": "DIE",
+				"target": "DIE"
+			}
+		],
+		"items": [{
+			"item": "DUCK",
+			"desc": "A yellow duck lying in the corner.",
+			"take": "You got the duck!"
+		}]
+	},
+
+	"PURPLE": {
+		"name": "Purple Room",
+		"desc": "The room is bright purple with Y2 engraved in a window.",
+		"exits": [
+			{
+				"exit": "RIGHT",
+				"target": "YELLOW"
+			}, {
+				"exit": "LEFT",
+				"target": "GREEN"
+			}, {
+				"exit": "DIE",
+				"target": "DIE"
+			}
+		],
+		"items": []
+	},
+
+	"GREEN": {
+		"name": "Green Room",
+		"desc": "It is a green room with P3 burned into the carpet.",
+		"exits": [
+			{
+				"exit": "RIGHT",
+				"target": "PURPLE"
+			}, {
+				"exit": "LEFT",
+				"target": "RED"
+			}, 
+			{
+				"exit": "DIE",
+				"target": "DIE"
+			}
+		],
+		"items": []
+	},
+	
+	"RED": {
+		"name": "Red Room",
+		"desc": "It is a red room with E4 painted on the bathtub.",
+		"exits": [
+			{
+				"exit": "RIGHT",
+				"target": "GREEN"
+			}, {
+				"exit": "LEFT",
+				"target": "ORANGE"
+			}, 
+			{
+				"exit": "DIE",
+				"target": "DIE"
+			}
+		],
+		"items": [{
+			"item": "POTATO",
+			"desc": "There's a potato on the ceiling.",
+			"take": "You stole the potato! How could you?!"
+		}]
+	},
+
+	"ORANGE": {
+		"name": "Orange Room",
+		"desc": "It is a dark orange room with with E7 written on the lampshade.",
+		"exits": [
+			{
+				"exit": "RIGHT",
+				"target": "RED"
+			}, {
+				"exit": "LEFT",
+				"target": "PINK"
+			}, 
+			{
+				"exit": "DIE",
+				"target": "DIE"
+			}
+		],
+		"items": []
+	},
+
+	"PINK": {
+		"name": "Pink Room",
+		"desc": "It is a pink room with a T1 sign on a flamingo.",
+		"exits": [
+			{
+				"exit": "RIGHT",
+				"target": "ORANGE"
+			}, {
+				"exit": "LEFT",
+				"target": "BLUE"
+			}, 
+			{
+				"exit": "DIE",
+				"target": "DIE"
+			}
+		],
+		"items": []
+	},
+
+	"BLUE": {
+		"name": "Blue Room",
+		"desc": "It is a blue room with D5 drawn in a puddle on the ground.",
+		"exits": [
+			{
+				"exit": "RIGHT",
+				"target": "PINK"
+			}, {
+				"exit": "LEFT",
+				"target": "YELLOW"
+			}, 
+			{
+				"exit": "DIE",
+				"target": "DIE"
+			}
+		],
+		"items": [{
+			"item": "MOTHERBOARD",
+			"desc": "There's a broken motherboard sticking out of the floor.",
+			"take": "This is literally useless."
+		}]
+	},
+
+	"DIE": {
+		"name": "The End",
+		"desc": "You figured out the puzzle! Good job! That is literally it, there is nothing else to do...Yeah, the objects were just to throw you off, good job on making it here though...",
+		"exits": [],
+			"items": []
+	}
+}

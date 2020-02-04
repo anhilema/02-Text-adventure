@@ -1,16 +1,17 @@
 {
-    "PAMPHLET": {
+   "DUCK": {
        "exits": {},
-       "actions": {
-          "read": "The pamphlet says, Welcome to Zork!"
-       },
-       "points": 1
-    },
-    "SWORD": {
-       "exits": {
-          "CELLA": "The sword glows with a faint blue glow!"
-       },
        "actions": {},
        "points": 10
-    }
- }
+   },
+   "POTATO": {
+       "exits": {},
+       "actions": {},
+       "points": 100000
+   },
+   "MOTHERBOARD": {
+       "exits": {},
+       "actions": {},
+       "points": 50
+   }
+}
