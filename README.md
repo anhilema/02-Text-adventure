@@ -1,2 +1,2 @@
 # 02-Text-adventure
-c220 text adventure
+We had to make a text adventure game our C220 class. This is my game where you go through different colored rooms and try to solve the puzzle to get to the last room.
