@@ -2,16 +2,16 @@
    "DUCK": {
        "exits": {},
        "actions": {},
-       "points": 10
+       "points": 57
    },
    "POTATO": {
        "exits": {},
        "actions": {},
-       "points": 100000
+       "points": 842
    },
    "MOTHERBOARD": {
        "exits": {},
        "actions": {},
-       "points": 50
+       "points": 73
    }
 }
